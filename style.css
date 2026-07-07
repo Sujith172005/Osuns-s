@@ -3544,14 +3544,15 @@ label:has(#otpCode) {
 }
 
 .other-business-card h3 {
-  font-family: var(--font-serif) !important;
+  font-family: var(--font-sans) !important;
   color: var(--wave-blue) !important;
-  font-size: clamp(1.8rem, 3vw, 2.45rem) !important;
+  font-size: clamp(1.0rem, 3vw, 1.70rem) !important;
   line-height: 1.05 !important;
   text-align: center !important;
   margin: 6px 0 14px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.2px !important;
 }
-
 .other-business-card p {
   color: var(--muted) !important;
   font-size: 1rem !important;
