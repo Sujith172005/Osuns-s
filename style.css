@@ -71,8 +71,10 @@ button {
 }
 
 .section-navy {
-  background: linear-gradient(135deg, var(--navy-dark), var(--navy), var(--wave-blue));
-  color: #fff
+  background: linear-gradient(135deg, #e8d3a2 0%, #e8d3a2 35%, #e8d3a2 70%,#e8d3a2 100%) !important;
+  color: var(--navy-dark) !important;
+  border-top: 1px solid rgba(46, 111, 142, .14);
+  border-bottom: 1px solid rgba(46, 111, 142, .14);
 }
 
 .site-header {
@@ -390,9 +392,16 @@ button {
   font-size: 1.04rem
 }
 
-.section-heading.light h2,
+.section-heading.light h2 {
+  color: #052a4a !important;
+}
+
 .section-heading.light p {
-  color: #fff
+  color: var(--muted) !important;
+}
+
+.section-navy .section-kicker {
+  color: var(--gold) !important;
 }
 
 .product-category {
@@ -558,10 +567,12 @@ button {
 .serve-grid div {
   text-align: center;
   padding: 24px 15px;
-  border: 1px solid rgba(255, 255, 255, .15);
+  border: 1px solid rgba(46, 111, 142, .16) !important;
   border-radius: 16px;
-  background: rgba(255, 255, 255, .06);
-  font-weight: 900
+  background: rgba(255, 255, 255, .82) !important;
+  color: var(--navy-dark) !important;
+  font-weight: 900;
+  box-shadow: 0 12px 32px rgba(11, 35, 65, .08);
 }
 
 .contact-grid {
@@ -1166,7 +1177,7 @@ body {
 .product-body h3,
 .type-card h3,
 .footer h3 {
-  color: var(--premium-teal) !important;
+  color: #052a4a !important;
   letter-spacing: -0.01em;
 }
 
@@ -3819,4 +3830,12 @@ label:has(#otpCode) {
     height: 27px !important;
     flex-basis: 27px !important;
   }
+}
+
+
+.section-navy .serve-grid div:hover {
+  background: #ffffff !important;
+  border-color: rgba(185, 138, 35, .32) !important;
+  transform: translateY(-3px);
+  box-shadow: 0 18px 42px rgba(11, 35, 65, .12);
 }
