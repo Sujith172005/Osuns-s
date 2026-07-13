@@ -2573,9 +2573,9 @@ body {
 
 .top-info-bar {
   height: var(--topbar-h) !important;
-  background: linear-gradient(90deg, #070f34ce, #1d4061) !important;
+  background: linear-gradient(90deg, #b68d2e, #b68d2e) !important;
   color: #fff !important;
-  font-size: .88rem !important;
+  font-size: .71rem !important;
   font-weight: 800 !important;
   letter-spacing: .01em !important;
   display: flex !important;
