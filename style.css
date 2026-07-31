@@ -3839,3 +3839,610 @@ label:has(#otpCode) {
   transform: translateY(-3px);
   box-shadow: 0 18px 42px rgba(11, 35, 65, .12);
 }
+
+
+/* === BUMONIIS-MATCHED PRODUCT IMAGE GRID (B2B) === */
+.product-grid,
+.type-grid {
+  align-items: stretch;
+}
+
+.product-card,
+.type-card {
+  height: 100%;
+}
+
+.product-image {
+  height: 245px !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-color: #fff !important;
+}
+
+.type-image {
+  height: 245px !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-color: #fff !important;
+}
+
+.detail-image {
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-color: #fff !important;
+}
+
+/* Keep all cards aligned like Bumoniis on tablet and mobile */
+@media (max-width: 900px) {
+  .baked-grid,
+  .product-grid,
+  .type-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 560px) {
+  .baked-grid,
+  .product-grid,
+  .type-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .product-image,
+  .type-image {
+    height: 235px !important;
+  }
+}
+
+
+/* ===== FINAL HOME PRODUCT & OTHER-BUSINESS POLISH ===== */
+#products.products {
+  background: linear-gradient(180deg, #fffdf8 0%, #f8fbfa 48%, #ffffff 100%) !important;
+  padding-top: 86px !important;
+  padding-bottom: 92px !important;
+}
+#products .section-heading {
+  max-width: 780px !important;
+  margin: 0 auto 42px !important;
+  text-align: center !important;
+}
+#products .section-heading h2 {
+  font-size: clamp(2rem, 4vw, 3.15rem) !important;
+  letter-spacing: -0.035em !important;
+}
+#products .product-category {
+  padding: 30px !important;
+  margin-top: 30px !important;
+  border: 1px solid rgba(10, 76, 68, .12) !important;
+  border-radius: 26px !important;
+  background: rgba(255,255,255,.92) !important;
+  box-shadow: 0 18px 48px rgba(17, 55, 48, .08) !important;
+}
+#products .category-header {
+  margin-bottom: 24px !important;
+  padding-bottom: 18px !important;
+  border-bottom: 1px solid rgba(10, 76, 68, .10) !important;
+}
+#products .category-header h3 {
+  margin-top: 5px !important;
+  font-size: clamp(1.35rem, 2.4vw, 1.9rem) !important;
+}
+#products .product-grid {
+  gap: 24px !important;
+}
+#products .product-card {
+  overflow: hidden !important;
+  border: 1px solid rgba(10, 76, 68, .12) !important;
+  border-radius: 20px !important;
+  background: #fff !important;
+  box-shadow: 0 10px 28px rgba(17,55,48,.08) !important;
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease !important;
+}
+#products .product-card:hover {
+  transform: translateY(-7px) !important;
+  border-color: rgba(191,145,42,.42) !important;
+  box-shadow: 0 20px 42px rgba(17,55,48,.15) !important;
+}
+#products .product-image {
+  min-height: 245px !important;
+  background-size: cover !important;
+  background-position: center !important;
+  border-radius: 0 !important;
+  position: relative !important;
+}
+#products .product-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 60%, rgba(4,37,33,.16));
+  pointer-events: none;
+}
+#products .product-body {
+  padding: 21px 21px 23px !important;
+}
+#products .product-body > span {
+  display: inline-block !important;
+  margin-bottom: 8px !important;
+  color: #8a6715 !important;
+  font-size: .72rem !important;
+  font-weight: 800 !important;
+  letter-spacing: .07em !important;
+  text-transform: uppercase !important;
+}
+#products .product-body h3 {
+  margin: 0 0 13px !important;
+  font-size: 1.22rem !important;
+}
+#products .product-mini-info {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 7px !important;
+}
+#products .product-mini-info em {
+  padding: 6px 10px !important;
+  border-radius: 999px !important;
+  background: #f1f7f5 !important;
+  color: #285c54 !important;
+  font-size: .72rem !important;
+  font-style: normal !important;
+  font-weight: 700 !important;
+}
+#products .text-link {
+  font-weight: 800 !important;
+}
+
+/* Make both related-business logos large and visually equal on every page. */
+.other-business-logo-wrap {
+  width: 190px !important;
+  height: 125px !important;
+  min-height: 125px !important;
+  flex: 0 0 190px !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 10px !important;
+  border-radius: 18px !important;
+  background: #ffffff !important;
+  border: 1px solid rgba(10,76,68,.10) !important;
+}
+.other-business-logo {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  max-height: none !important;
+  object-fit: contain !important;
+  object-position: center !important;
+}
+.bumoniis-business-logo,
+.sarvathaa-business-logo {
+  transform: scale(1.08) !important;
+}
+@media (max-width: 700px) {
+  #products .product-category { padding: 20px !important; border-radius: 20px !important; }
+  #products .product-image { min-height: 220px !important; }
+  .other-business-top { flex-direction: column !important; align-items: center !important; }
+  .other-business-logo-wrap { width: 180px !important; height: 115px !important; flex-basis: 180px !important; }
+  .other-business-tag { margin: 0 auto !important; text-align: center !important; }
+}
+
+/* ===== FINAL REQUEST: OPEN OTHER-BUSINESS LOGOS + FULLY VISIBLE SUB-PRODUCT IMAGES ===== */
+/* Remove the small rectangular logo holder. Keep both logos large and visually balanced. */
+.other-business-logo-wrap {
+  width: 210px !important;
+  height: 125px !important;
+  min-height: 125px !important;
+  flex: 0 0 210px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  overflow: visible !important;
+}
+.other-business-logo {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 210px !important;
+  max-height: 125px !important;
+  object-fit: contain !important;
+  object-position: center !important;
+  filter: none !important;
+}
+.bumoniis-business-logo,
+.sarvathaa-business-logo {
+  transform: none !important;
+}
+
+/* Match Bumoniis sub-product card proportions and keep every product fully visible. */
+.type-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 26px !important;
+  align-items: stretch !important;
+}
+.type-card {
+  display: flex !important;
+  flex-direction: column !important;
+  height: 100% !important;
+  min-width: 0 !important;
+  overflow: hidden !important;
+  border-radius: 18px !important;
+}
+.type-image {
+  width: 100% !important;
+  height: 270px !important;
+  min-height: 270px !important;
+  margin: 0 !important;
+  border-radius: 0 !important;
+  background-size: contain !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-color: #fff !important;
+  transform: none !important;
+}
+.type-card:hover .type-image {
+  transform: none !important;
+}
+.type-card .type-enquiry,
+.type-card button.type-enquiry.open-order {
+  margin-top: auto !important;
+}
+
+@media (max-width: 900px) {
+  .type-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+  .other-business-logo-wrap {
+    width: 190px !important;
+    height: 115px !important;
+    min-height: 115px !important;
+    flex-basis: 190px !important;
+  }
+  .other-business-logo {
+    max-width: 190px !important;
+    max-height: 115px !important;
+  }
+}
+
+@media (max-width: 560px) {
+  .type-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+  .type-image {
+    height: 250px !important;
+    min-height: 250px !important;
+  }
+  .other-business-logo-wrap {
+    width: 180px !important;
+    height: 105px !important;
+    min-height: 105px !important;
+    flex-basis: 180px !important;
+  }
+  .other-business-logo {
+    max-width: 180px !important;
+    max-height: 105px !important;
+  }
+}
+
+
+/* ===== FINAL: BUMONIIS-MATCHED SUB-PRODUCT NAMES, DESCRIPTION & CARD SIZE ===== */
+.type-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 22px !important;
+  align-items: stretch !important;
+}
+.type-card.bumoniis-match-card {
+  display: flex !important;
+  flex-direction: column !important;
+  min-height: 100% !important;
+  overflow: hidden !important;
+  background: #fff !important;
+  border: 1px solid rgba(201, 168, 76, .28) !important;
+  border-radius: 28px !important;
+  box-shadow: 0 14px 34px rgba(45, 25, 15, .10) !important;
+}
+.type-card.bumoniis-match-card:hover { transform: translateY(-5px) !important; }
+.type-card img.type-image.bumoniis-match-image {
+  display: block !important;
+  width: 100% !important;
+  height: 230px !important;
+  min-height: 230px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  object-fit: contain !important;
+  object-position: center !important;
+  background: #fff !important;
+  border-radius: 0 !important;
+  transform: none !important;
+}
+.type-card .type-card-body {
+  display: flex !important;
+  flex: 1 1 auto !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  padding: 1.5rem !important;
+}
+.type-card .type-card .type-card-body h3 {
+  margin: 0 !important;
+  color: #4a2818 !important;
+  font-size: clamp(1.25rem, 2vw, 1.65rem) !important;
+  line-height: 1.2 !important;
+}
+.type-card .type-card-body p {
+  flex: 1 1 auto !important;
+  margin: .65rem 0 1.1rem !important;
+  color: #6f625b !important;
+  font-size: .96rem !important;
+  line-height: 1.65 !important;
+}
+.type-card .type-enquiry {
+  width: 100% !important;
+  margin-top: auto !important;
+}
+@media (max-width: 900px) {
+  .type-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+}
+@media (max-width: 560px) {
+  .type-grid { grid-template-columns: 1fr !important; gap: 18px !important; }
+  .type-card img.type-image.bumoniis-match-image { height: 220px !important; min-height: 220px !important; }
+}
+
+
+/* ===== FINAL ALIGNMENT: SUB-PRODUCT NUMBER, DESCRIPTION & ENQUIRY ===== */
+.type-grid {
+  grid-auto-rows: 1fr !important;
+}
+.type-card.bumoniis-match-card {
+  height: 100% !important;
+}
+.type-card .type-card-body {
+  width: 100% !important;
+  box-sizing: border-box !important;
+  text-align: left !important;
+}
+.type-card .type-card .type-card-body h3 {
+  min-height: 2.4em !important;
+  display: flex !important;
+  align-items: flex-start !important;
+}
+.type-card .type-card-body p {
+  min-height: 5.1em !important;
+  width: 100% !important;
+}
+.type-card .type-enquiry,
+.type-card button.type-enquiry.open-order {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: 48px !important;
+  padding: 12px 18px !important;
+  box-sizing: border-box !important;
+  text-align: center !important;
+}
+@media (max-width: 560px) {
+  .type-card .type-card-body h3,
+  .type-card .type-card-body p { min-height: 0 !important; }
+}
+
+
+/* ===== FINAL PREMIUM SUB-PRODUCT CONTENT & ENQUIRY STYLE ===== */
+.type-card.bumoniis-match-card {
+  border: 1px solid rgba(159, 112, 58, .22) !important;
+  border-radius: 22px !important;
+  background: #ffffff !important;
+  box-shadow: 0 12px 30px rgba(55, 31, 18, .10) !important;
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease !important;
+}
+.type-card.bumoniis-match-card:hover {
+  transform: translateY(-6px) !important;
+  border-color: rgba(159, 112, 58, .48) !important;
+  box-shadow: 0 18px 40px rgba(55, 31, 18, .15) !important;
+}
+.type-card.bumoniis-match-card .type-card-body {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+  width: 100% !important;
+  padding: 22px 22px 24px !important;
+  text-align: center !important;
+}
+.type-card.bumoniis-match-card .type-card-body h3 {
+  display: block !important;
+  min-height: 0 !important;
+  margin: 0 0 10px !important;
+  color: #3f2418 !important;
+  font-family: Georgia, 'Times New Roman', serif !important;
+  font-size: clamp(1.25rem, 1.8vw, 1.55rem) !important;
+  font-weight: 700 !important;
+  line-height: 1.25 !important;
+  letter-spacing: .01em !important;
+}
+.type-card.bumoniis-match-card .type-card-body p {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  flex: 1 1 auto !important;
+  min-height: 5.4em !important;
+  margin: 0 0 20px !important;
+  color: #6b5a50 !important;
+  font-family: Arial, Helvetica, sans-serif !important;
+  font-size: .96rem !important;
+  font-weight: 400 !important;
+  line-height: 1.65 !important;
+}
+.type-card.bumoniis-match-card .type-enquiry,
+.type-card.bumoniis-match-card button.type-enquiry.open-order {
+  width: 100% !important;
+  min-height: 50px !important;
+  margin-top: auto !important;
+  padding: 13px 20px !important;
+  border: 1px solid #6f4a2f !important;
+  border-radius: 999px !important;
+  background: linear-gradient(135deg, #70472d, #4a2b1b) !important;
+  color: #ffffff !important;
+  box-shadow: 0 8px 18px rgba(74, 43, 27, .20) !important;
+  font-family: Arial, Helvetica, sans-serif !important;
+  font-size: .92rem !important;
+  font-weight: 700 !important;
+  letter-spacing: .055em !important;
+  text-transform: uppercase !important;
+  cursor: pointer !important;
+  transition: transform .2s ease, box-shadow .2s ease, background .2s ease !important;
+}
+.type-card.bumoniis-match-card .type-enquiry:hover,
+.type-card.bumoniis-match-card button.type-enquiry.open-order:hover {
+  transform: translateY(-2px) !important;
+  background: linear-gradient(135deg, #8b5b39, #5a3420) !important;
+  box-shadow: 0 11px 24px rgba(74, 43, 27, .28) !important;
+}
+.type-card.bumoniis-match-card .type-enquiry:focus-visible {
+  outline: 3px solid rgba(183, 137, 77, .35) !important;
+  outline-offset: 3px !important;
+}
+@media (max-width: 560px) {
+  .type-card.bumoniis-match-card .type-card-body { padding: 20px !important; }
+  .type-card.bumoniis-match-card .type-card-body p { min-height: 0 !important; font-size: .94rem !important; }
+}
+
+/* ===== USER REQUEST: ALIGN SUB-PRODUCT BULK ENQUIRY + GOLD COLOR ONLY ===== */
+.type-card.bumoniis-match-card .type-card-body {
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.type-card.bumoniis-match-card .type-enquiry,
+.type-card.bumoniis-match-card button.type-enquiry.open-order {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  min-height: 50px !important;
+  margin: auto 0 0 !important;
+  padding: 13px 20px !important;
+  box-sizing: border-box !important;
+  border: 1px solid #c99a35 !important;
+  border-radius: 999px !important;
+  background: linear-gradient(135deg, #f2cf73 0%, #d4a63f 52%, #b98522 100%) !important;
+  color: #2f2415 !important;
+  box-shadow: 0 8px 18px rgba(185, 138, 35, .24) !important;
+}
+
+.type-card.bumoniis-match-card .type-enquiry:hover,
+.type-card.bumoniis-match-card button.type-enquiry.open-order:hover {
+  background: linear-gradient(135deg, #f6da89 0%, #ddb34f 52%, #c49228 100%) !important;
+  box-shadow: 0 11px 24px rgba(185, 138, 35, .30) !important;
+}
+
+
+/* Product-oriented header and related images */
+.detail-image {
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+}
+.related-thumb {
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+}
+
+
+/* ===== FINAL OSUN'S-ORIENTED SUB-PRODUCT ENQUIRY BUTTON ===== */
+.type-card.bumoniis-match-card .type-enquiry,
+.type-card.bumoniis-match-card button.type-enquiry.open-order {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  min-height: 50px !important;
+  margin: auto 0 0 !important;
+  padding: 13px 22px !important;
+  border: 1px solid #c89a35 !important;
+  border-radius: 12px !important;
+  background: linear-gradient(135deg, #f2d27d 0%, #d7aa43 55%, #bd8724 100%) !important;
+  color: #2f2417 !important;
+  box-shadow: 0 7px 16px rgba(151, 105, 27, .22) !important;
+  font-family: Georgia, 'Times New Roman', serif !important;
+  font-size: 1rem !important;
+  font-weight: 700 !important;
+  line-height: 1 !important;
+  letter-spacing: .025em !important;
+  text-transform: none !important;
+  cursor: pointer !important;
+  transition: transform .2s ease, box-shadow .2s ease, filter .2s ease !important;
+}
+.type-card.bumoniis-match-card .type-enquiry:hover,
+.type-card.bumoniis-match-card button.type-enquiry.open-order:hover {
+  transform: translateY(-2px) !important;
+  background: linear-gradient(135deg, #f6dc91 0%, #dfb552 55%, #c8932d 100%) !important;
+  box-shadow: 0 10px 22px rgba(151, 105, 27, .3) !important;
+}
+
+/* ===== BUMONIIS-STYLE PRODUCT HERO BANNERS ===== */
+.hero.hero-slider .hero-slide {
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+}
+.hero.hero-slider::after {
+  background: linear-gradient(90deg, rgba(28, 17, 10, .78) 0%, rgba(28, 17, 10, .44) 48%, rgba(28, 17, 10, .12) 100%) !important;
+}
+@media (max-width: 700px) {
+  .hero.hero-slider .hero-slide {
+    background-position: center center !important;
+  }
+  .hero.hero-slider::after {
+    background: linear-gradient(90deg, rgba(28, 17, 10, .72), rgba(28, 17, 10, .34)) !important;
+  }
+}
+
+/* ===== COMPACT, ATTRACTIVE HOME SECTION TYPOGRAPHY ===== */
+#about .section-kicker,
+.section-heading .section-kicker {
+  font-size: .72rem !important;
+  letter-spacing: .12em !important;
+  margin-bottom: 8px !important;
+}
+
+#about .about-content h2 {
+  font-size: clamp(1.55rem, 2.5vw, 2.05rem) !important;
+  line-height: 1.22 !important;
+  letter-spacing: -.015em !important;
+  max-width: 760px !important;
+  margin-bottom: 16px !important;
+}
+
+.section-heading h2,
+.section-heading.light h2,
+.contact h2 {
+  font-size: clamp(1.55rem, 2.6vw, 2.15rem) !important;
+  line-height: 1.2 !important;
+  letter-spacing: -.012em !important;
+  margin-bottom: 12px !important;
+}
+
+#about .about-content > p:not(.section-kicker),
+.section-heading > p:not(.section-kicker) {
+  font-size: .96rem !important;
+  line-height: 1.7 !important;
+}
+
+@media (max-width: 700px) {
+  #about .about-content h2,
+  .section-heading h2,
+  .section-heading.light h2,
+  .contact h2 {
+    font-size: 1.48rem !important;
+    line-height: 1.25 !important;
+  }
+
+  #about .about-content > p:not(.section-kicker),
+  .section-heading > p:not(.section-kicker) {
+    font-size: .9rem !important;
+    line-height: 1.65 !important;
+  }
+}
