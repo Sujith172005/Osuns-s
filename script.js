@@ -109,27 +109,96 @@
   }
 
   const slides = document.querySelectorAll('.hero-slide');
-  const prev = document.querySelector('.hero-prev');
-  const next = document.querySelector('.hero-next');
-  const dots = document.querySelector('.hero-dots');
-  let idx = 0, timer = null;
-  if (slides.length) {
-    slides.forEach((_, i) => {
-      const b = document.createElement('button');
-      b.type = 'button';
-      b.setAttribute('aria-label', 'Banner ' + (i + 1));
-      b.addEventListener('click', () => show(i));
-      dots && dots.appendChild(b);
+  const prevButton = document.querySelector('.hero-prev');
+  const nextButton = document.querySelector('.hero-next');
+  const dotsContainer = document.querySelector('.hero-dots');
+  const heroMedia = document.querySelector('.home-hero-media');
+  const revealItems = document.querySelectorAll('.reveal-on-scroll');
+  const counters = document.querySelectorAll('.counter-card strong');
+  let currentSlide = 0;
+  let autoplayTimer = null;
+
+  function showSlide(index) {
+    if (!slides.length) return;
+    currentSlide = (index + slides.length) % slides.length;
+    slides.forEach((slide, slideIndex) => slide.classList.toggle('active', slideIndex === currentSlide));
+    document.querySelectorAll('.hero-dots button').forEach((dot, dotIndex) => {
+      dot.classList.toggle('active', dotIndex === currentSlide);
     });
-    function show(n) {
-      idx = (n + slides.length) % slides.length;
-      slides.forEach((s, i) => s.classList.toggle('active', i === idx));
-      dots && [...dots.children].forEach((d, i) => d.classList.toggle('active', i === idx));
-      clearInterval(timer);
-      timer = setInterval(() => show(idx + 1), 4500);
+    if (heroMedia) {
+      heroMedia.style.backgroundImage = slides[currentSlide].style.backgroundImage || '';
     }
-    prev && prev.addEventListener('click', () => show(idx - 1));
-    next && next.addEventListener('click', () => show(idx + 1));
-    show(0);
   }
+
+  function startAutoplay() {
+    if (!slides.length) return;
+    clearInterval(autoplayTimer);
+    autoplayTimer = setInterval(() => showSlide(currentSlide + 1), 5000);
+  }
+
+  if (slides.length) {
+    slides.forEach(slide => slide.classList.remove('active'));
+    if (dotsContainer) {
+      dotsContainer.innerHTML = '';
+      slides.forEach((_, index) => {
+        const dot = document.createElement('button');
+        dot.type = 'button';
+        dot.setAttribute('aria-label', `Go to slide ${index + 1}`);
+        dot.addEventListener('click', () => {
+          showSlide(index);
+          startAutoplay();
+        });
+        dotsContainer.appendChild(dot);
+      });
+    }
+
+    prevButton?.addEventListener('click', () => {
+      showSlide(currentSlide - 1);
+      startAutoplay();
+    });
+
+    nextButton?.addEventListener('click', () => {
+      showSlide(currentSlide + 1);
+      startAutoplay();
+    });
+
+    showSlide(0);
+    startAutoplay();
+  }
+
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+
+  revealItems.forEach(item => revealObserver.observe(item));
+
+  counters.forEach(counter => {
+    const target = Number(counter.dataset.count || 0);
+    const suffix = counter.dataset.suffix || '';
+    const duration = 1400;
+    const startTime = performance.now();
+
+    const tick = (time) => {
+      const progress = Math.min((time - startTime) / duration, 1);
+      const value = Math.floor(progress * target);
+      counter.textContent = value + suffix;
+      if (progress < 1) requestAnimationFrame(tick);
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          requestAnimationFrame(tick);
+          observer.disconnect();
+        }
+      });
+    }, { threshold: 0.35 });
+
+    observer.observe(counter.closest('.counter-card'));
+  });
 })();
