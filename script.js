@@ -115,8 +115,15 @@
   const heroMedia = document.querySelector('.home-hero-media');
   const revealItems = document.querySelectorAll('.reveal-on-scroll');
   const counters = document.querySelectorAll('.counter-card strong');
+  const heroCopy = document.querySelector('.home-hero-copy');
+  const heroTitleEl = heroCopy ? heroCopy.querySelector('h1') : null;
+  const heroDescEl = heroCopy ? heroCopy.querySelector('.hero-desc') : null;
   let currentSlide = 0;
   let autoplayTimer = null;
+
+  // store default copy so we can fall back if a slide has no data
+  if (heroTitleEl && !heroTitleEl.dataset.default) heroTitleEl.dataset.default = heroTitleEl.textContent.trim();
+  if (heroDescEl && !heroDescEl.dataset.default) heroDescEl.dataset.default = heroDescEl.textContent.trim();
 
   function showSlide(index) {
     if (!slides.length) return;
@@ -128,6 +135,13 @@
     if (heroMedia) {
       heroMedia.style.backgroundImage = slides[currentSlide].style.backgroundImage || '';
     }
+
+    // update textual copy based on currently active slide (image-oriented text)
+    const activeSlide = slides[currentSlide];
+    const slideTitle = activeSlide?.dataset?.title;
+    const slideDesc = activeSlide?.dataset?.desc;
+    if (heroTitleEl) heroTitleEl.textContent = slideTitle || heroTitleEl.dataset.default || '';
+    if (heroDescEl) heroDescEl.textContent = slideDesc || heroDescEl.dataset.default || '';
   }
 
   function startAutoplay() {
