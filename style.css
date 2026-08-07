@@ -63,7 +63,7 @@ button {
 }
 
 .section {
-  padding: 86px 0
+  padding: 35px 0
 }
 
 .section-light {
@@ -290,7 +290,7 @@ button {
 .home-hero-layout {
   display: grid;
   grid-template-columns: minmax(0, 1.05fr) minmax(320px, .95fr);
-  gap: 36px;
+  gap: 50px;
   align-items: center
 }
 
@@ -303,23 +303,41 @@ button {
 }
 
 .home-hero-copy h1 {
-  text-align: left
+  text-align: left;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased
 }
 
 .home-hero-copy p {
   margin-left: 0;
-  margin-right: 0
+  margin-right: 0;
+  line-height: 1.65;
+  letter-spacing: 0.3px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased
 }
 
 .home-hero-media {
   min-height: 390px;
   border-radius: 28px;
   overflow: hidden;
-  background-image: url('sujith/truffles%20%26%20praniles.png');
+  background-image: url('assets/images/truffles-pralines.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  box-shadow: 0 24px 70px rgba(0, 0, 0, .28)
+  box-shadow: 0 24px 70px rgba(0, 0, 0, .28);
+  transition: opacity .22s ease
+}
+
+.home-hero-copy {
+  transition: opacity .22s ease
+}
+
+.home-hero-copy.is-fading,
+.home-hero-media.is-fading {
+  opacity: 0
 }
 
 .eyebrow,
@@ -328,23 +346,32 @@ button {
   text-transform: uppercase;
   letter-spacing: .18em;
   font-weight: 900;
-  font-size: .84rem;
+  font-size: .99rem;
   margin-bottom: 12px
 }
 
 .hero h1 {
   font-family: var(--font-serif);
   font-size: clamp(2.6rem, 5vw, 5.2rem);
-  line-height: .98;
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
   color: #fff;
-  margin-bottom: 18px
+  margin-bottom: 22px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased
 }
 
 .hero p {
   font-size: clamp(1rem, 2vw, 1.18rem);
-  color: rgba(255, 255, 255, .9);
+  font-weight: 400;
+  line-height: 1.65;
+  letter-spacing: 0.3px;
+  color: rgba(255, 255, 255, .92);
   max-width: 720px;
-  margin: 0 auto
+  margin: 0 auto;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased
 }
 
 .hero-actions {
@@ -390,9 +417,9 @@ button {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, #8ec7dd 0%, #4f95bd 100%);
+  background: #091e3a;
   color: #fff;
-  box-shadow: 0 12px 24px rgba(79, 149, 189, .22)
+  box-shadow: 0 12px 24px rgba(9, 30, 58, .22)
 }
 
 .btn-whatsapp {
@@ -615,7 +642,7 @@ button {
   position: relative;
   overflow: hidden;
   background: #f5fbff;
-  padding: 80px 0;
+  padding: 59px 0;
   border: none;
 }
 
@@ -640,7 +667,7 @@ button {
   font-size: 0.99rem;
   line-height: 1.8;
   color: var(--text);
-  margin: 0;
+  margin: 0 0 13px 0;
   text-align: justify;
 }
 
@@ -1598,7 +1625,7 @@ body {
 .product-body h3,
 .type-card h3,
 .footer h3 {
-  color: #052a4a !important;
+  color: #091e3a !important;
   letter-spacing: -0.01em;
 }
 
@@ -1612,7 +1639,7 @@ body {
 .section-heading p,
 .footer p,
 .footer a {
-  color: var(--premium-muted) !important;
+  color: var(--text) !important;
 }
 
 .nav-link {
@@ -1733,7 +1760,7 @@ body {
 .footer h3 {
   font-family: var(--font-serif) !important;
   font-weight: 800 !important;
-  color: var(--premium-teal) !important;
+  color:#091e3a !important;
 }
 
 .footer a {
@@ -1761,9 +1788,9 @@ body {
 }
 
 .footer-social .footer-social-icon {
-  width: 50px !important;
-  height: 55px !important;
-  min-width: 53px !important;
+  width: 48px !important;
+  height: 45px !important;
+  min-width: 48px !important;
   border-radius: 50% !important;
   display: inline-flex !important;
   align-items: center !important;
@@ -1915,7 +1942,7 @@ body {
 .hero-single {
   position: relative !important;
   z-index: 2 !important;
-  width: min(100% - 32px, 1120px) !important;
+  width: min(100% - 32px, 1233px) !important;
   margin-inline: auto !important;
   display: grid !important;
   place-items: center !important;
@@ -2176,11 +2203,13 @@ body {
 .hero .container {
   min-height: calc(610px - var(--header-h)) !important;
   padding: 36px 0 46px !important;
+  width: 100%;
 }
 
 .hero h1 {
   font-size: clamp(2.35rem, 4.4vw, 4.6rem) !important;
   line-height: 1.02 !important;
+  color: var(--text) !important;
 }
 
 .hero-text,
@@ -2188,6 +2217,7 @@ body {
 .hero p {
   font-size: clamp(.96rem, 1.5vw, 1.08rem) !important;
   line-height: 1.55 !important;
+  color: var(--text) !important;
 }
 
 .hero-actions {
@@ -2528,15 +2558,15 @@ body {
 }
 
 .product-actions a.text-link {
-  background: var(--navy) !important;
+  background: #091e3a !important;
   color: #fff !important;
-  box-shadow: 0 10px 22px rgba(11, 35, 65, .18) !important;
+  box-shadow: 0 10px 22px rgba(9, 30, 58, .18) !important;
 }
 
 .product-actions button.text-link {
-  background: linear-gradient(135deg, var(--gold-light), var(--gold)) !important;
-  color: var(--navy) !important;
-  box-shadow: 0 10px 22px rgba(185, 138, 35, .22) !important;
+  background: #091e3a !important;
+  color: #fff !important;
+  box-shadow: 0 10px 22px rgba(9, 30, 58, .18) !important;
 }
 
 .product-actions .text-link:after {
@@ -2757,13 +2787,13 @@ body {
   display: none !important;
 }
 
-.product-actions a.text-link {
+  .product-actions a.text-link {
   width: 100% !important;
   min-height: 46px !important;
   border-radius: 999px !important;
-  background: linear-gradient(135deg, var(--navy), var(--wave-blue)) !important;
+  background: #091e3a !important;
   color: #ffffff !important;
-  box-shadow: 0 12px 26px rgba(11, 35, 65, .18) !important;
+  box-shadow: 0 12px 26px rgba(9, 30, 58, .18) !important;
 }
 
 .product-actions a.text-link:hover {
@@ -2864,9 +2894,9 @@ body {
 .footer .footer-brand img,
 .footer-logo {
   height: 150px !important;
-  max-height: 150px !important;
+  max-height: 140px !important;
   width: auto !important;
-  max-width: 240px !important;
+  max-width: 130px !important;
   display: block !important;
   object-fit: contain !important;
   margin: 0 auto 12px !important;
@@ -2993,9 +3023,9 @@ body {
 
 .top-info-bar {
   height: var(--topbar-h) !important;
-  background: linear-gradient(90deg, #b68d2e, #b68d2e) !important;
+  background: #091e3a !important;
   color: #fff !important;
-  font-size: .71rem !important;
+  font-size: .81rem !important;
   font-weight: 800 !important;
   letter-spacing: .01em !important;
   display: flex !important;
@@ -3534,10 +3564,8 @@ label:has(#otpCode) {
 .delivery-section {
   position: relative !important;
   overflow: hidden !important;
-  background:
-    radial-gradient(circle at top left, rgba(185, 138, 35, .12), transparent 32%),
-    radial-gradient(circle at bottom right, rgba(13, 90, 110, .12), transparent 34%),
-    linear-gradient(180deg, #ffffff 0%, #fbf8f1 100%) !important;
+  background:#f9f4ec;
+    
 }
 
 .delivery-section::before {
@@ -3570,7 +3598,6 @@ label:has(#otpCode) {
   background: rgba(255, 255, 255, .92) !important;
   border: 1px solid rgba(185, 138, 35, .24) !important;
   box-shadow: 0 16px 42px rgba(11, 35, 65, .09) !important;
-  text-align: center !important;
   transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease !important;
 }
 
@@ -3591,27 +3618,36 @@ label:has(#otpCode) {
 }
 
 .delivery-icon {
-  width: 68px !important;
-  height: 68px !important;
+  width: 100% !important;
+  max-width: 220px !important;
+  height: auto !important;
   margin: 0 auto 18px !important;
   display: grid !important;
   place-items: center !important;
-  border-radius: 20px !important;
-  background: linear-gradient(135deg, rgba(185, 138, 35, .20), rgba(13, 90, 110, .10)) !important;
+  background: none !important;
   font-size: 2rem !important;
+}
+
+.delivery-icon img {
+  width: 100% !important;
+  height: auto !important;
+  object-fit: contain !important;
+  border-radius: 0 !important;
+  display: block !important;
 }
 
 .delivery-step-card h3,
 .delivery-info-card h3 {
   font-family: var(--font-serif) !important;
-  color: var(--wave-blue) !important;
+  color: #091e3a !important;
   font-size: 1.55rem !important;
   line-height: 1.05 !important;
   margin-bottom: 12px !important;
+  text-align: center !important;
 }
 
 .delivery-step-card p {
-  color: var(--muted) !important;
+  color: var(--text) !important;
   font-size: .96rem !important;
   line-height: 1.65 !important;
 }
@@ -3967,7 +4003,7 @@ label:has(#otpCode) {
   padding: 9px 14px !important;
   border-radius: 999px !important;
   background: rgba(13, 90, 110, .08) !important;
-  color: var(--wave-blue) !important;
+  color: #091e3a !important;
   font-size: .78rem !important;
   font-weight: 900 !important;
   text-align: right !important;
@@ -3978,7 +4014,7 @@ label:has(#otpCode) {
 
 .other-business-card h3 {
   font-family: var(--font-sans) !important;
-  color: var(--wave-blue) !important;
+  color: #091e3a !important;
   font-size: clamp(1.0rem, 3vw, 1.70rem) !important;
   line-height: 1.05 !important;
   text-align: center !important;
@@ -3987,7 +4023,7 @@ label:has(#otpCode) {
   letter-spacing: 0.2px !important;
 }
 .other-business-card p {
-  color: var(--muted) !important;
+  color: var(--text) !important;
   font-size: 1rem !important;
   line-height: 1.75 !important;
   text-align: center !important;
@@ -4146,7 +4182,7 @@ label:has(#otpCode) {
   max-width: 560px !important;
   margin-left: auto !important;
   margin-right: auto !important;
-  text-align: center !important;
+  text-align: justify !important;
   flex: 1 1 auto !important;
 }
 .other-business-link {
@@ -4322,12 +4358,12 @@ label:has(#otpCode) {
 /* ===== FINAL HOME PRODUCT & OTHER-BUSINESS POLISH ===== */
 #products.products {
   background: linear-gradient(180deg, #fffdf8 0%, #f8fbfa 48%, #ffffff 100%) !important;
-  padding-top: 86px !important;
-  padding-bottom: 92px !important;
+  padding-top: 10px !important;
+  padding-bottom: 60px !important;
 }
 #products .section-heading {
   max-width: 780px !important;
-  margin: 0 auto 42px !important;
+  margin: 0 auto 4px !important;
   text-align: center !important;
 }
 #products .section-heading h2 {
@@ -4806,12 +4842,12 @@ label:has(#otpCode) {
 
 /* ===== BUMONIIS-STYLE PRODUCT HERO BANNERS ===== */
 .hero.hero-slider .hero-slide {
-  background-size: cover !important;
+  background-size: contain !important;
   background-position: center center !important;
   background-repeat: no-repeat !important;
 }
 .hero.hero-slider::after {
-  background: linear-gradient(90deg, rgba(28, 17, 10, .78) 0%, rgba(28, 17, 10, .44) 48%, rgba(28, 17, 10, .12) 100%) !important;
+  background: #f9f4ec !important;
 }
 @media (max-width: 700px) {
   .hero.hero-slider .hero-slide {
@@ -5042,7 +5078,7 @@ label:has(#otpCode) {
 }
 
 #about .about-main-grid {
-  grid-template-columns: 360px 1fr !important;
+  grid-template-columns: 550px 1fr !important;
 }
 
 #about .about-visual {
@@ -5051,11 +5087,11 @@ label:has(#otpCode) {
 
 #about .about-image-card {
   width: 100%;
-  max-width: 360px;
+  max-width: 560px;
 }
 
 #about .about-image-card img {
-  min-height: 330px !important;
+  min-height: 380px !important;
   max-height: 300px !important;
 }
 

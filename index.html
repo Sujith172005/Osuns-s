@@ -27,7 +27,7 @@
         </div>
         <div class="container nav-wrap">
             <a aria-label="Osun's Home" class="brand" href="index.html#home"><img alt="Osun's logo" class="brand-logo"
-                    src="assets/images/logo-osun.png" /></a>
+                    src="/assets/assets/images/logo-osun.png" /></a>
             <button aria-expanded="false" aria-label="Open menu" class="menu-toggle"
                 id="menuToggle"><span></span><span></span><span></span></button>
             <nav aria-label="Main navigation" class="main-nav" id="mainNav">
@@ -53,9 +53,18 @@
                 <div class="nav-dropdown"><button aria-expanded="false" class="nav-link dropdown-toggle"
                         type="button">Services <span class="arrow">▾</span></button>
                     <div class="dropdown-menu services-dropdown-menu">
-                        <a href="index.html#services-premium-packaging">Premium Safe Packaging</a><a
-                            href="index.html#services-product-planning">Product &amp; Quantity Planning</a><a
-                            href="index.html#services-delivery-support">Delivery Support</a><a class="open-order"
+                        <a href="/manfacturing.html">Manufacturing Excellence</a><a
+                            href="/business enablement.html#Manufacturing">Business Enablement </a><a
+                            href="/business setup.html#business-setup">Business Setup</a>
+                            <a
+                            href="/complain&documentation.html#compliance-&-documentation">Compliance &Documentation</a>
+                            <a
+                            href="/training& development.html#training-&-development">Training & Development</a>
+                            <a
+                            href="/delivery.html#delivery-support">Delivery Support</a>
+                            <a
+                            href="/customer support.html#customer-support">Customer Support</a>
+                            <a class="open-order"
                             data-interest="WhatsApp Enquiry" href="index.html#contact">WhatsApp Enquiry</a>
                     </div>
                 </div>
@@ -81,28 +90,54 @@
     </header>
     <main>
         <section aria-label="Osun's B2B hero banner" class="hero hero-slider home-hero-banner" id="home">
-            <div class="hero-slide active" style="background-image:url('sujith/truffles%20%26%20praniles.png')"></div>
-            <div class="hero-slide" style="background-image:url('sujith/fudge,carmel,toffee.png')"></div>
-            <div class="hero-slide" style="background-image:url('sujith/macarons.png')"></div>
-            <div class="hero-slide" style="background-image:url('sujith/cake.png')"></div>
+
             <div class="hero-controls" aria-label="Banner controls">
                 <button class="hero-arrow hero-prev" type="button" aria-label="Previous banner">←</button>
                 <button class="hero-arrow hero-next" type="button" aria-label="Next banner">→</button>
-                <div class="hero-dots" role="tablist" aria-label="Select banner"></div>
             </div>
             <div class="container hero-content">
                 <div class="home-hero-layout">
                     <div class="home-hero-copy">
-                        <p class="eyebrow">Your Trusted B2B Partner</p>
-                        <h1>Premium Chocolates, Confection &amp; Baked Products</h1>
-                        <p>Osun's helps restaurants, cafes, retailers, corporates, schools and event companies with
-                            quality products, reliable supply and WhatsApp bulk enquiry support.</p>
-                        <div class="hero-actions"><a class="btn btn-primary" href="#products">View Products</a><button
-                                class="btn btn-whatsapp open-order" type="button">Bulk Enquiry on WhatsApp</button>
-                        </div>
+                        <p class="eyebrow">Truffles &amp; Pralines</p>
+                        <h1>Silky Truffles &amp; Pralines, Hand-Finished for Premium Gifting</h1>
+                        <p>Melt-in-the-mouth truffles and pralines, crafted for retail shelves, hampers and corporate
+                            gifting.</p>
+                        <div class="hero-actions"><a class="btn btn-primary"
+                                href="products">Explore Products</a><button
+                                class="btn btn-whatsapp open-order" type="button"
+                                data-interest="Truffles &amp; Pralines Enquiry">Contact Us</button></div>
                     </div>
-                    <div class="home-hero-media" aria-hidden="true"></div>
+                    <div class="home-hero-media" aria-hidden="true"
+                        style="background-image:url('assets/images/truffles-pralines.jpg')"></div>
                 </div>
+
+                <!-- Product banner data for the slider above. Hidden — read by script.js to swap the
+                     copy, image and buttons on each transition. -->
+                     <div class="hero-slide" 
+                    data-title="Business Experience"
+                    data-text="18+ years Strong entrepreneurial experience backed by proven business success built on trust, professionalism and customer commitment."
+                    data-image="/sujith/banners/business experience.png" data-link="truffles-pralines.html">
+                </div>
+                <div class="hero-slide" 
+                    data-title="Professional Expertise"
+                    data-text="Professionally qualified in pastry, bakery, chocolate, and confectionery, delivering industry-standard products and solutions."
+                    data-image ="/sujith/banners/profeesional expertise.png" data-link="fudge-caramels-toffees.html"
+                   ></div>
+                <div class="hero-slide" 
+                    data-title="Fully Equipped Commercial Kitchen"
+                    data-text="A fully equipped commercial kitchen designed for premium quality production and efficient handling of large-volume orders."
+                    data-image="/sujith/banners/fully equipeed commercial kitchen.png" data-link="macaroons.html"
+                    ></div>
+                <div class="hero-slide"
+                    data-title="Training & Skill Development"
+                    data-text="Comprehensive technical training, operational guidance and continuous mentoring to ensure long-term business success."
+                    data-image="/sujith/banners/Training & Skill Development.png" data-link="chocolate-clusters.html"
+                   ></div>
+                <div class="hero-slide" 
+                    data-title="End-to-End Business Solutions"
+                    data-text="Generously filled bars made to travel well, at the volumes cafes and retailers need.Complete support for setting up cafés, bakeries, chocolate boutique and food businesses—from planning to launch."
+                    data-image="/sujith/banners/end to end soultions.png" data-link="chocolate-filled-bars.html"
+                    ></div>
             </div>
         </section>
         <section class="section about-section" id="about" aria-labelledby="about-title">
@@ -160,10 +195,11 @@
         </section>
         <section class="section products" id="products">
             <div class="container">
-                <div class="section-heading">
+                
+                <div class="product-category">
+                    <div class="section-heading">
                     <h2>Our Products</h2>
                 </div>
-                <div class="product-category">
                     <div class="category-header">
                         <p class="section-kicker">Chocolates &amp; Confection Products</p>
                     </div>
@@ -201,7 +237,7 @@
                             </article>
                             <article class="product-card">
                                 <a aria-label="View Chocolate Clusters" class="product-image" href="chocolate-clusters.html"
-                                    style="background-image:url('sujith/cluster.png')"></a>
+                                    style="background-image:url('/sujith/chocolate\ cluster.png')"></a>
                                 <div class="product-body">
                                     <h3><a href="chocolate-clusters.html">Chocolate Clusters</a></h3>
                                     <div class="product-actions"><a class="text-link" href="chocolate-clusters.html">View
@@ -271,18 +307,18 @@
                 </div>
                 <div class="delivery-process-grid services-grid">
                     <article class="delivery-step-card service-card" id="services-whatsapp-enquiry">
-                        <div class="delivery-icon">📦</div>
-                        <h3> Manufacturing</h3>
-                        <p>Handcrafted Chocolates</p>
-                        <p>Premium Confecionery</p>
-                        <p>Artisan Baked Products</p>
-                        <p>Bulk & Corporate Orders</p>
-                        <p>OEM / Contract Manufacturing</p>
+                         <div class="delivery-icon"><img src="/sujith/home page service icon/business support.png" alt="Business Support"></div>
+                        <p>Product Standardization</p>
+                        <p>Process Optimization</p>
+                        <p>Quality Assurance</p>
+                        <p>New Product Innovation</p>
+                        <p>Business Mentoring</p>
+                        <p>Ongoing Technical support</p>
+                        
                     </article>
                     <article class="delivery-step-card service-card" id="services-product-planning">
 
-                        <div class="delivery-icon">🎯</div>
-                        <h3>Business Enablement</h3>
+                        <div class="delivery-icon"><img src="/sujith/home page service icon/Business enablement.png" alt="Business Enablement"></div>
                         <p>Cafe Setup</p>
                         <p>Bakery Setup</p>
                         <p>Chocolate Boutique Setup</p>
@@ -293,8 +329,7 @@
                     </article>
                     <article class="delivery-step-card service-card" id="services-premium-packaging">
 
-                        <div class="delivery-icon">📦</div>
-                        <h3>Business Setup</h3>
+                        <div class="delivery-icon"><img src="/sujith/home page service icon/business setup.png" alt="Business Setup"></div>
                         <p>Business Planning & Concept Development</p>
                         <p>Kitchen Layout & Workflow Design</p>
                         <p>Equipment and tool consultation</p>
@@ -304,22 +339,7 @@
                         <p>Costing & Menu Engineering</p>
                     </article>
                     <article class="delivery-step-card service-card" id="services-delivery-support">
-
-                        <div class="delivery-icon">🚚</div>
-                        <h3>Compliance & Documentation</h3>
-                        <p>FSSAI Registration & Licencing</p>
-                        <p>Business Registration Guidence</p>
-                        <p>Statutory Documentation</p>
-                        <p>Food Safety Compliance</p>
-                        <p>Hygiene & Quality Standards</p>
-                    </article>
-                </div>
-                <div class="delivery-process-grid services-grid">
-                    <article class="delivery-step-card service-card" id="services-whatsapp-enquiry">
-
-                        <div class="delivery-icon">💬</div>
-                        
-                        <h3>Training and development</h3>
+                 <div class="delivery-icon"><img src="/sujith/home page service icon/business support.png" alt="Training and development"></div>
                         <p>Professional Baking Trainiing</p>
                         <p>Chocolate & Confection Training</p>
                         <p>Staff Skill Development</p>
@@ -327,22 +347,31 @@
                         <p>Food safety & Hygiene Training</p>
                         <p>Standard Operating Procedures(Sop) Training</p>
                         <p>Production & quality control Training</p>
+                      
+                    </article>
+                </div>
+                <div class="delivery-process-grid services-grid">
+                    <article class="delivery-step-card service-card" id="services-whatsapp-enquiry">
+
+                        <div class="delivery-icon"><img src="/sujith/home page service icon/compliance & doc.png" alt="Compliance and Documentation"></div>
+                        <p>FSSAI Registration & Licencing</p>
+                        <p>Business Registration Guidence</p>
+                        <p>Statutory Documentation</p>
+                        <p>Food Safety Compliance</p>
+                        <p>Hygiene & Quality Standards</p>
                     </article>
                     <article class="delivery-step-card service-card" id="services-product-planning">
 
-                        <div class="delivery-icon">🎯</div>
-                        <h3>Business Support</h3>
-                        <p>Product Standardization</p>
-                        <p>Process Optimization</p>
-                        <p>Quality Assurance</p>
-                        <p>New Product Innovation</p>
-                        <p>Business Mentoring</p>
-                        <p>Ongoing Technical support</p>
+                         <div class="delivery-icon"><img src="/sujith/home page service icon/manufacturing.png" alt="Manufacturing"></div>
+                        <p>Handcrafted Chocolates</p>
+                        <p>Premium Confecionery</p>
+                        <p>Artisan Baked Products</p>
+                        <p>Bulk & Corporate Orders</p>
+                        <p>OEM / Contract Manufacturing</p>
                     </article>
                     <article class="delivery-step-card service-card" id="services-premium-packaging">
 
-                        <div class="delivery-icon">🚚</div>
-                        <h3>Delivery Support</h3>
+                        <div class="delivery-icon"><img src="/sujith/home page service icon/delivery support.png" alt="Delivery Support"></div>
                         <p>Timely Delivery</p>
                         <p>Dedicated Logistics Network</p>
                         <p>Safe & Hygienic Transportation</p>
@@ -353,8 +382,7 @@
                     </article>
                     <article class="delivery-step-card service-card" id="services-delivery-support">
 
-                        <div class="delivery-icon">💬</div>
-                        <h3>Customer Support</h3>
+                        <div class="delivery-icon"><img src="/sujith/home page service icon/customer support.png" alt="Customer Support"></div>
                         <p>Phone &Email Support</p>
                         <p>Video Consultation</p>
                         <p>Onsite &On-line Technical Assistance</p>
@@ -362,7 +390,7 @@
                         <p>Equipment Support</p>
                         <p>Virtual Training Sessions</p>
                         <p>Staff Assistance</p>
-                        <p>Live chat Support</p>
+                        <p>Live chat Support    </p>
                     </article>
                 </div>
             </div>
@@ -398,7 +426,7 @@
                                 <img alt="Sarvatha logo" class="other-business-logo sarvathaa-business-logo"
                                     src="assets/images/sarvathaa-logo.png" />
                             </div>
-                            <span class="other-business-tag">Baking Learning &amp; Practice</span>
+                             <span class="other-business-tag">Baking Entrepreneur solutions</span>
                         </div>
                         <h3>Sarvatha</h3>
                         <p>We help master the art and science of baking through expert-led training designed for
@@ -418,9 +446,7 @@
                     <p>Click Bulk Enquiry on WhatsApp, enter your details and send enquiry. This is not online checkout;
                         our team
                         will contact you.</p>
-                    <div class="contact-list"><a href="tel:+917904336537">+91 79043 36537</a><a
-                            href="mailto:info@osunss.com">info@osunss.com</a><a href="https://www.osunss.com"
-                            rel="noopener" target="_blank">www.osunss.com</a></div><button
+                    <div class="contact-list"><a href="tel:+917904336537">+91 79043 36537</a></div><button
                         class="btn btn-whatsapp open-order" type="button">Bulk
                         Enquiry on WhatsApp</button>
                 </div>
@@ -455,7 +481,7 @@
                 
             </div>
             <div>
-                <h3>Chocolates &amp; Confection Products</h3><a href="truffles-pralines.html">Truffles &amp;
+                <h3>Chocolates &amp; Confection</h3><a href="truffles-pralines.html">Truffles &amp;
                     Pralines</a><a href="fudge-caramels-toffees.html">Fudge Caramels &amp; Toffees</a><a
                     href="macaroons.html">Macaroons</a><a href="chocolate-clusters.html">Chocolate Clusters</a><a
                     href="chocolate-filled-bars.html">Chocolate Filled
@@ -469,8 +495,8 @@
                 <h3>Address</h3>
                 <p>Ullaaya Brothers Foods Pvt Ltd</p>
                 <p>No.345, 1st cross, 4th Main, Indiranagar, Bangalore–560075 </p>
-                <p><a >Call - 080-42046781, +91-79043365367</a></p>
-                <p><a href="mailto:contact@ullaayafoods.com">Mail-contact@ullaayafoods.com </a></p>
+                <p><a >📞-080-42046781, +91-79043365367</a></p>
+                <p><a href="mailto:contact@ullaayafoods.com">📧-contact@ullaaya.com </a></p>
             </div>
         </div>
         <div class="footer-bottom">© 2026 Osun's. All Rights Reserved.</div>
