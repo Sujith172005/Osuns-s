@@ -78,7 +78,7 @@ button {
 }
 
 .site-header {
-  position: fixed;
+  position: relative;
   inset: 0 0 auto;
   z-index: 1000;
   height: var(--header-h);
@@ -231,7 +231,6 @@ button {
   display: grid;
   align-items: center;
   overflow: hidden;
-  background: var(--navy)
 }
 
 .hero-slide {
@@ -248,9 +247,6 @@ button {
   opacity: 1;
 }
 
-.home-hero-banner {
-  background: var(--navy);
-}
 
 .home-hero-media {
   min-height: 390px;
@@ -494,7 +490,7 @@ button {
 .section-heading {
   text-align: center;
   max-width: 840px;
-  margin: 0 auto 42px
+  margin: 0 auto 1px
 }
 
 .section-heading h2,
@@ -642,7 +638,7 @@ button {
   position: relative;
   overflow: hidden;
   background: #f5fbff;
-  padding: 59px 0;
+  padding-top:100px;
   border: none;
 }
 
@@ -1192,7 +1188,7 @@ button {
 .footer-grid {
   display: grid;
   grid-template-columns: 1.2fr 1fr 1fr 1fr;
-  gap: 28px
+  gap: 2px
 }
 
 .footer img {
@@ -1462,7 +1458,25 @@ button {
     grid-template-columns: repeat(2, 1fr)
   }
 }
-
+.manufacturing-section{
+  position: relative;
+  padding:20px 0 80px;
+}
+.manufacturing-heading{
+  margin-bottom: 25px;
+}
+.manufacturing-intro-text{
+  width:100%;
+  margin-bottom: 40px;
+  font-size: 0.99rem;
+  text-align: justify;
+}
+.manufacturing-main-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
+}
 @media (max-width:640px) {
   .container {
     width: min(100% - 24px, 1220px)
@@ -1525,7 +1539,10 @@ button {
     height: 56px
   }
 }
-
+.center{
+  text-align: center;
+  margin-bottom: 15px;
+}
 
 /* ===== FINAL: Official WhatsApp + Instagram footer icons ===== */
 .footer-social {
@@ -2748,7 +2765,7 @@ body {
   align-items: center !important;
   justify-content: flex-start !important;
   text-align: center !important;
-  width: 100% !important;
+  width: 250px !important;
 }
 
 .footer .footer-brand img,
@@ -3593,7 +3610,7 @@ label:has(#otpCode) {
 .delivery-step-card {
   position: relative !important;
   min-height: 290px !important;
-  padding: 28px 22px !important;
+  padding: 5px 22px !important;
   border-radius: 28px !important;
   background: rgba(255, 255, 255, .92) !important;
   border: 1px solid rgba(185, 138, 35, .24) !important;
@@ -3628,12 +3645,35 @@ label:has(#otpCode) {
   font-size: 2rem !important;
 }
 
+.service-card .delivery-icon {
+  width: 110px !important;
+  max-width: 110px !important;
+  height: 110px !important;
+  margin: 0 auto 1px !important;
+  padding: 1px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+}
+
 .delivery-icon img {
   width: 100% !important;
   height: auto !important;
   object-fit: contain !important;
   border-radius: 0 !important;
   display: block !important;
+}
+
+.service-card .delivery-icon img {
+  width: 72% !important;
+  max-width: 72% !important;
+  height: 72% !important;
+  max-height: 72% !important;
+  object-fit: contain !important;
+  display: block !important;
+
 }
 
 .delivery-step-card h3,
@@ -3782,9 +3822,30 @@ label:has(#otpCode) {
 .services-section .section-heading p {
   max-width: 920px !important;
 }
+.service-card {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  text-align: center !important;
+}
+
 .service-card h3 {
   min-height: 52px !important;
+  margin: 0 0 1px !important;
+  font-size: 1.1rem !important;
+  line-height: 1.3 !important;
+  font-weight: 700 !important;
+  letter-spacing: .01em !important;
+  color: #0b2341 !important;
+  font-family: var(--text, 'Cormorant Garamond', serif) !important;
 }
+
+.service-card p {
+  margin: 0 0 7px !important;
+  width: 100% !important;
+  text-align: left !important;
+}
+
 .about-content p {
   font-size: 1.02rem !important;
   line-height: 1.82 !important;
@@ -4587,11 +4648,12 @@ label:has(#otpCode) {
 
 
 /* ===== FINAL: BUMONIIS-MATCHED SUB-PRODUCT NAMES, DESCRIPTION & CARD SIZE ===== */
+/* FIX: 2 and 3 product layouts */
 .type-grid {
-  display: grid !important;
-  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-  gap: 22px !important;
-  align-items: stretch !important;
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 22px !important;
+    width: 100% !important;
 }
 .type-card.bumoniis-match-card {
   display: flex !important;
@@ -4714,7 +4776,7 @@ label:has(#otpCode) {
   margin: 0 0 10px !important;
   color: #3f2418 !important;
   font-family: Georgia, 'Times New Roman', serif !important;
-  font-size: clamp(1.25rem, 1.8vw, 1.55rem) !important;
+  font-size: clamp(1.0rem, 1.8vw, 1.55rem) !important;
   font-weight: 700 !important;
   line-height: 1.25 !important;
   letter-spacing: .01em !important;
@@ -4863,7 +4925,7 @@ label:has(#otpCode) {
 .section-heading .section-kicker {
   font-size: .99rem !important;
   letter-spacing: .12em !important;
-  margin-bottom: 8px !important;
+  margin-bottom: 1px !important;
 }
 
 #about .about-content h2 {
@@ -4880,7 +4942,7 @@ label:has(#otpCode) {
   font-size: clamp(1.55rem, 2.6vw, 2.15rem) !important;
   line-height: 1.2 !important;
   letter-spacing: -.012em !important;
-  margin-bottom: 12px !important;
+  margin-bottom: 10px !important;
 }
 
 #about .about-content > p:not(.section-kicker),
@@ -4888,6 +4950,7 @@ label:has(#otpCode) {
   font-size: 0.99rem !important;
   line-height: 1.8 !important;
   color: var(--text) !important;
+  margin-bottom: 20px;
 }
 
 @media (max-width: 700px) {
@@ -5091,7 +5154,7 @@ label:has(#otpCode) {
 }
 
 #about .about-image-card img {
-  min-height: 380px !important;
+  min-height: 320px !important;
   max-height: 300px !important;
 }
 
@@ -5171,5 +5234,178 @@ label:has(#otpCode) {
   .product-scroll .product-card {
     flex: 0 0 calc(85% - 8px);
     min-width: 200px;
+  }
+}
+
+/* ===== FINAL HOME HERO FIX =====
+   The .hero-slide elements below the visible hero are DATA ONLY.
+   Do not render them as full-screen background layers. */
+.home-hero-banner .hero-slide {
+  display: none !important;
+}
+
+/* Compact desktop banner: content on the left, changing image on the right. */
+.home-hero-banner {
+  min-height: 430px !important;
+  height: 430px !important;
+  padding-top: var(--header-h) !important;
+  padding-bottom: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+.home-hero-banner .hero-content {
+  width: min(100% - 32px, 1230px) !important;
+  max-width: 1230px !important;
+  min-height: 0 !important;
+  height: 100% !important;
+  padding: 20px 0 !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+.home-hero-layout {
+  width: 100% !important;
+  min-height: 0 !important;
+  height: 100% !important;
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+  gap: 20px !important;
+  align-items: center !important;
+}
+
+.home-hero-copy {
+  min-width: 0 !important;
+  text-align: left !important;
+  padding: 10px 0 !important;
+}
+
+.home-hero-copy h1,
+.home-hero-copy p {
+  text-align: left !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.home-hero-copy h1 {
+  font-size: clamp(2rem, 3.6vw, 3.7rem) !important;
+  line-height: 1.05 !important;
+  margin-bottom: 14px !important;
+}
+
+.home-hero-copy p:not(.eyebrow) {
+  max-width: 600px !important;
+  font-size: clamp(.9rem, 1.2vw, 1.05rem) !important;
+  line-height: 1.5 !important;
+}
+
+.home-hero-media {
+  width: 100% !important;
+  height: 420px !important;
+  min-height: 0 !important;
+  border-radius: 18px !important;
+  background-size: cover !important;
+  background-position: center !important;
+}
+
+.home-hero-banner::after {
+  display: none !important;
+}
+
+@media (max-width: 900px) {
+  .home-hero-banner {
+    height: auto !important;
+    min-height: 520px !important;
+  }
+
+  .home-hero-banner .hero-content {
+    height: auto !important;
+    min-height: 0 !important;
+    padding: 28px 0 36px !important;
+  }
+
+  .home-hero-layout {
+    height: auto !important;
+    grid-template-columns: 1fr !important;
+    gap: 18px !important;
+  }
+
+  .home-hero-media {
+    height: 260px !important;
+  }
+}
+
+@media (max-width: 560px) {
+  .home-hero-banner {
+    min-height: 0 !important;
+    height: auto !important;
+  }
+
+  .home-hero-banner .hero-content {
+    width: min(100% - 26px, 1220px) !important;
+  }
+
+  .home-hero-media {
+    height: 220px !important;
+    border-radius: 16px !important;
+  }
+}
+
+/* ===== FINAL PRODUCT IMAGE PATH / SIZE FIX ===== */
+#products .product-image {
+  width: 100% !important;
+  height: 195px !important;
+  min-height: 0 !important;
+  aspect-ratio: auto !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+}
+.type-grid>*{
+  grid-column: span 2 !important;
+}
+.type-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax( 1fr)) !important;
+    gap: 22px !important;
+    width: 100% !important;
+}
+
+.type-grid > * {
+    grid-column: span 1 !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: none !important;
+}
+/* ===== FINAL FIX: BROWNIES / SUB-PRODUCT CARD LAYOUT =====
+   Desktop: always use 3 equal columns.
+   With 2 products, the third column stays empty so each card
+   keeps exactly the same width as a 3-product layout.
+*/
+.type-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 22px !important;
+  width: 100% !important;
+  align-items: stretch !important;
+}
+
+.type-grid > .type-card {
+  grid-column: span 1 !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  max-width: none !important;
+}
+
+@media (max-width: 900px) {
+  .type-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 560px) {
+  .type-grid {
+    grid-template-columns: 1fr !important;
+    gap: 18px !important;
   }
 }
