@@ -4949,7 +4949,7 @@ label:has(#otpCode) {
   font-size: 0.99rem !important;
   line-height: 1.8 !important;
   color: var(--text) !important;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
 }
 
 @media (max-width: 700px) {
@@ -5479,4 +5479,3 @@ label:has(#otpCode) {
   .manufacturing-main-grid .about-content p {
     margin-bottom: 16px !important;
   }
-}
