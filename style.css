@@ -1209,7 +1209,8 @@ button {
   display: block;
   color: var(--muted);
   font-weight: 700;
-  margin-bottom: 8px
+  text-align: left;
+  margin-bottom: 8px;
 }
 
 .footer-social {
@@ -2765,7 +2766,7 @@ body {
   align-items: center !important;
   justify-content: flex-start !important;
   text-align: center !important;
-  width: 250px !important;
+  width: 320px !important;
 }
 
 .footer .footer-brand img,
@@ -4922,7 +4923,7 @@ label:has(#otpCode) {
 /* ===== COMPACT, ATTRACTIVE HOME SECTION TYPOGRAPHY ===== */
 #about .section-kicker,
 .section-heading .section-kicker {
-  font-size: .99rem !important;
+  font-size: 1.20rem !important;
   letter-spacing: .12em !important;
   margin-bottom: 1px !important;
 }
