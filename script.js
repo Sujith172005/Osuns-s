@@ -4,7 +4,7 @@
   // ==========================================
   // DEBUGGING: Uncomment to see what's happening
   // ==========================================
-  const DEBUG = true; // Set to false to disable logs
+  const DEBUG = false; // Keep production consoles quiet
   
   function log(message, data) {
     if (DEBUG) {
@@ -26,6 +26,31 @@
   const nameInput = document.getElementById('otpName');
   const phoneInput = document.getElementById('otpPhone');
   const productInput = document.getElementById('otpProduct');
+
+  // Product-card backgrounds cannot use native image lazy-loading, so load
+  // them shortly before they enter the viewport instead.
+  const lazyBackgrounds = document.querySelectorAll('[data-bg]');
+
+  function loadBackground(element) {
+    const source = element.dataset.bg;
+    if (!source) return;
+    element.style.backgroundImage = `url("${source}")`;
+    element.removeAttribute('data-bg');
+  }
+
+  if ('IntersectionObserver' in window) {
+    const backgroundObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        loadBackground(entry.target);
+        observer.unobserve(entry.target);
+      });
+    }, { rootMargin: '300px 0px' });
+
+    lazyBackgrounds.forEach(element => backgroundObserver.observe(element));
+  } else {
+    lazyBackgrounds.forEach(loadBackground);
+  }
 
   function closeMenu() {
     if (!mainNav || !menuToggle) return;
