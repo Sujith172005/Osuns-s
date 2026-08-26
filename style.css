@@ -16,6 +16,18 @@
   --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif
 }
 
+/* Prevent the temporary blue tap overlay on clickable mobile grid items.
+   Keyboard focus remains visible through the existing :focus-visible rules. */
+a,
+button,
+[role="button"],
+.product-image,
+.detail-image,
+.related-card,
+.type-enquiry {
+  -webkit-tap-highlight-color: transparent;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -319,7 +331,7 @@ button {
   min-height: 390px;
   border-radius: 28px;
   overflow: hidden;
-  background-image: url('assets/images/truffles-pralines.jpg');
+  background-image: url('sujith/banners/business%20experience.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
