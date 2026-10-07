@@ -367,3 +367,12 @@ console.log('  document.querySelector(".hero-next")           → should show bu
 console.log('  document.querySelector(".home-hero-media")     → should show div element');
 console.log('  document.querySelector(".hero-dots")           → should show div element');
 console.log('%cIf any show "null", that element is missing from HTML', 'color: red;');
+
+// Keep the service icon colour visible after a mobile tap.
+document.querySelectorAll('#services .service-card').forEach(card => {
+  card.addEventListener('click', () => {
+    document.querySelectorAll('#services .service-card').forEach(other => {
+      other.classList.toggle('is-icon-active', other === card);
+    });
+  });
+});
